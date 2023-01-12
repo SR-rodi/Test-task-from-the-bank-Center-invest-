@@ -5,8 +5,10 @@ import com.example.spasex.feature_spase.domain.repository.SpasePagingLaunchesRep
 import com.example.spasex.feature_spase.domain.usecase.LaunchUseCase
 import javax.inject.Inject
 
-class LaunchesViewModel @Inject constructor (
-    private val repository: SpasePagingLaunchesRepository
-    ) : ViewModel() {
-    // TODO: Implement the ViewModel
+class LaunchesViewModel @Inject constructor(
+    repository: SpasePagingLaunchesRepository
+) : ViewModel() {
+
+    val data = repository.loading()
+
 }

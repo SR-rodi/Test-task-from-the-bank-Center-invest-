@@ -6,7 +6,7 @@ import javax.inject.Inject
 
 class SpaseRepositoryImpl @Inject constructor (private val api: SpaseApi) : SpaseRepository {
 
-    override suspend fun getLaunches(page: Int) = api.getLaunches(page).toListLaunches()
+    override suspend fun getLaunches(page: Int) = api.getLaunches().toListLaunches()
 
     override suspend fun getCrewById(crewId: String) = api.getCrew(crewId).toCrew()
 }

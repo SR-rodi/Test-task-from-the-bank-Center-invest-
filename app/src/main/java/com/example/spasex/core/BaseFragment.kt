@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
 
-class BaseFragment {
     abstract class BaseFragment<B : ViewBinding> : Fragment() {
 
         private var _binding: B? = null
@@ -29,4 +28,3 @@ class BaseFragment {
             _binding = null
         }
     }
-}
