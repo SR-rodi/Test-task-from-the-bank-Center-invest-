@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">SpaseX</string>
+    <string name="name">Имя:</string>
+    <string name="count">счетчик ступений:</string>
+    <string name="date">дата запуска:</string>
+    <string name="success">Успешно</string>
+    <string name="fail">Провал</string>
+    <string name="status">Статус миссии:</string>
+
 </resources>

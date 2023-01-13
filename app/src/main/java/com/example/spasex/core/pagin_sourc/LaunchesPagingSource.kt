@@ -8,12 +8,10 @@ import com.example.spasex.feature_spase.domain.usecase.LaunchUseCase
 class LaunchesPagingSource(private val launchUseCase: LaunchUseCase) :
     PagingSource<Int, Launch>() {
     override fun getRefreshKey(state: PagingState<Int, Launch>) = FIRST_PAGE
-    override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Launch>{
+    override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Launch> {
         val page = params.key ?: FIRST_PAGE
 
-        launchUseCase.getLaunches(page).docs
-
-      return  kotlin.runCatching {
+        return kotlin.runCatching {
             launchUseCase.getLaunches(page)
         }.fold(
             onSuccess = {
@@ -27,9 +25,7 @@ class LaunchesPagingSource(private val launchUseCase: LaunchUseCase) :
         )
     }
 
-
     companion object {
         private const val FIRST_PAGE = 1
     }
-
 }

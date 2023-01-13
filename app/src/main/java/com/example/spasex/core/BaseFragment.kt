@@ -5,26 +5,29 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import androidx.viewbinding.ViewBinding
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.launch
 
-    abstract class BaseFragment<B : ViewBinding> : Fragment() {
+abstract class BaseFragment<B : ViewBinding> : Fragment() {
 
-        private var _binding: B? = null
-        protected val binding get() = _binding!!
+    private var _binding: B? = null
+    protected val binding get() = _binding!!
 
-        protected abstract fun initBinding(inflater: LayoutInflater): B?
+    protected abstract fun initBinding(inflater: LayoutInflater): B?
 
-        override fun onCreateView(
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?
-        ): View? {
-            _binding = initBinding(inflater)
-            return binding.root
-        }
-
-        override fun onDestroy() {
-            super.onDestroy()
-            _binding = null
-        }
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        _binding = initBinding(inflater)
+        return binding.root
     }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
+    }
+}

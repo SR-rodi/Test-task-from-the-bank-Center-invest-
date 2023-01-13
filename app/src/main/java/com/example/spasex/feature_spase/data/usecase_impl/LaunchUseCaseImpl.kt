@@ -8,6 +8,4 @@ import javax.inject.Inject
 class LaunchUseCaseImpl @Inject constructor (private val spaseRepository: SpaseRepository) : LaunchUseCase {
 
     override suspend fun getLaunches(page: Int) = spaseRepository.getLaunches(page)
-
-
 }

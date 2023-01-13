@@ -15,27 +15,30 @@ import kotlinx.coroutines.launch
 
 class LaunchesFragment : BaseFragment<FragmentLaunchesBinding>() {
 
-   private val viewModel:LaunchesViewModel by viewModels { requireContext().appComponent().viewModelFactory }
+    private val viewModel: LaunchesViewModel by viewModels { requireContext().appComponent().viewModelFactory }
 
-   override fun initBinding(inflater: LayoutInflater)= FragmentLaunchesBinding.inflate(inflater)
+    override fun initBinding(inflater: LayoutInflater) = FragmentLaunchesBinding.inflate(inflater)
 
-   private val adapter by lazy { LaunchesAdapter{id-> navigate(id)  } }
+    private val adapter by lazy { LaunchesAdapter { id -> navigate(id) } }
 
-   private fun navigate(id:String) {
-      findNavController().navigate(LaunchesFragmentDirections.actionLaunchesFragmentToDetailsFragment(id))
-   }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-      super.onViewCreated(view, savedInstanceState)
+        binding.launchRecycler.adapter = adapter
+        dataObserve()
+    }
 
-      binding.launchRecycler.adapter =adapter
+    private fun dataObserve() =
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewModel.data.collect { pagingData ->
+                adapter.submitData(pagingData)
+            }
+        }
 
-      viewLifecycleOwner.lifecycleScope.launch {
-         viewModel.data.collect{ pagingData->
-            adapter.submitData(pagingData)
-         }
-      }
-   }
-
+    private fun navigate(id: String) {
+        findNavController().navigate(
+            LaunchesFragmentDirections.actionLaunchesFragmentToDetailsFragment(id)
+        )
+    }
 
 }

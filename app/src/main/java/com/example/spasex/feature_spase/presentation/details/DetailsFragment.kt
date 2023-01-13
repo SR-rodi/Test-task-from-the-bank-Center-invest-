@@ -5,10 +5,18 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.navArgs
+import coil.load
+import com.example.spasex.R
 import com.example.spasex.core.BaseFragment
 import com.example.spasex.core.appComponent
+import com.example.spasex.core.setDateFormat
 import com.example.spasex.databinding.FragmentDetailsBinding
+import com.example.spasex.feature_spase.domain.model.Crew
+import com.example.spasex.feature_spase.presentation.details.adapter.CrewAdapter
+import kotlinx.coroutines.launch
+import java.util.Calendar
 
 class DetailsFragment : BaseFragment<FragmentDetailsBinding>() {
 
@@ -20,9 +28,26 @@ class DetailsFragment : BaseFragment<FragmentDetailsBinding>() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        Log.e("Kart",args.id)
-
-        binding.testId.text = args.id
-
+        viewModel.getData(args.id)
+            Log.e("Kart",args.id)
+        dataObserve()
     }
+
+   private fun dataObserve(){
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewModel.data.collect{ item->
+                binding.date.setDateFormat(item.date*1000)
+                binding.name.text = item.name
+                binding.counter.text =item.cores.first().toString()
+                binding.status.isSelected = item.success
+                if (item.success)  binding.status.setText(R.string.success)
+                else binding.status.setText(R.string.fail)
+                binding.icon.load(item.icon)
+                binding.description.text = item.details
+                binding.crewRecycler.adapter  = CrewAdapter(item.crewListItem)
+            }
+        }
+    }
+
+
 }
