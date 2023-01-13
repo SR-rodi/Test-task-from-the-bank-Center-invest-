@@ -6,11 +6,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.spasex'
+    namespace 'com.example.spaceX'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.spasex"
+        applicationId "com.example.spaceX"
         minSdk 22
         targetSdk 33
         versionCode 1
