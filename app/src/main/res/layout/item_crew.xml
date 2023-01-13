@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="8dp"
     android:elevation="4dp"
-    android:layout_marginHorizontal="4dp">
+    android:layout_margin="4dp">
     
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,7 +17,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="ФИО:"/>
+            android:text="@string/fio"/>
 
         <TextView
             android:id="@+id/name"
@@ -28,7 +28,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Агенство:"/>
+            android:text="@string/agency"/>
 
         <TextView
             android:id="@+id/agency"
@@ -39,7 +39,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Статус:"/>
+            android:text="@string/status_crew"/>
 
         <TextView
             android:id="@+id/status"

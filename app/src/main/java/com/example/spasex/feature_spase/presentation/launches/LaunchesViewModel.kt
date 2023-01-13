@@ -1,14 +1,16 @@
 package com.example.spasex.feature_spase.presentation.launches
 
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import androidx.paging.cachedIn
 import com.example.spasex.feature_spase.domain.repository.SpasePagingLaunchesRepository
-import com.example.spasex.feature_spase.domain.usecase.LaunchUseCase
 import javax.inject.Inject
 
 class LaunchesViewModel @Inject constructor(
     repository: SpasePagingLaunchesRepository
 ) : ViewModel() {
 
-    val data = repository.loading()
+    var data = repository.loading().cachedIn(viewModelScope)
+
 
 }

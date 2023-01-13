@@ -10,8 +10,10 @@
 
 
     <color name="transparent_black_20">#2C000000</color>
+    <color name="transparent_black_80">#C2000000</color>
     <color name="green">#2D6001</color>
     <color name="red">#600101</color>
+    <color name="error">#F80707</color>
 
 
 </resources>

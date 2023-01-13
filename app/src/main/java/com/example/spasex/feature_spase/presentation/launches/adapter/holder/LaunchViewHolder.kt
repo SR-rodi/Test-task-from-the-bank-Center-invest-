@@ -1,4 +1,4 @@
-package com.example.spasex.feature_spase.presentation.launches.adapter
+package com.example.spasex.feature_spase.presentation.launches.adapter.holder
 
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
@@ -6,7 +6,6 @@ import com.example.spasex.R
 import com.example.spasex.core.setDateFormat
 import com.example.spasex.databinding.ItemLaunchBinding
 import com.example.spasex.feature_spase.domain.model.Launch
-import java.text.SimpleDateFormat
 
 class LaunchViewHolder(private val binding: ItemLaunchBinding) :
     RecyclerView.ViewHolder(binding.root) {
