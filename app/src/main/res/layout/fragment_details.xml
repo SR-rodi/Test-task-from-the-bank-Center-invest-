@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".feature_spase.presentation.details.DetailsFragment">
 
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -48,15 +47,15 @@
                     android:orientation="vertical">
 
                     <LinearLayout
-                        android:layout_gravity="center"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:gravity="center"
                             android:layout_marginEnd="5dp"
+                            android:gravity="center"
                             android:text="@string/count"
                             android:textColor="@color/black"
                             android:textSize="15sp" />
@@ -70,8 +69,6 @@
                             android:textSize="15sp"
                             tools:text="25" />
                     </LinearLayout>
-
-
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -107,6 +104,7 @@
                         android:textSize="15sp"
                         tools:text="Успешно" />
                 </LinearLayout>
+
             </LinearLayout>
 
             <TextView
@@ -136,47 +134,46 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/crew_recycler"
-                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="8dp"
-                android:paddingVertical="10dp"
                 android:orientation="horizontal"
+                android:paddingVertical="10dp"
+                android:visibility="gone"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 tools:listitem="@layout/item_crew" />
 
             <TextView
                 android:id="@+id/not_crew"
-                android:layout_margin="8dp"
-                android:gravity="center"
-                android:visibility="gone"
-                android:textColor="@color/black"
-                android:textSize="18sp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/not_info"/>
+                android:layout_margin="8dp"
+                android:gravity="center"
+                android:text="@string/not_info"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:visibility="gone" />
 
         </LinearLayout>
-
 
 
     </ScrollView>
 
     <FrameLayout
-        android:visibility="gone"
         android:id="@+id/progressBar"
-        android:background="@color/white"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:visibility="gone">
 
         <ProgressBar
-            android:layout_gravity="center"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
 
         <include
             android:id="@+id/error"
-            layout="@layout/error_internet"/>
+            layout="@layout/error_internet" />
 
     </FrameLayout>
 

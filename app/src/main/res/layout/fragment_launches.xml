@@ -7,51 +7,21 @@
     tools:context=".feature_spase.presentation.launches.LaunchesFragment">
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/refresh"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/refresh">
+        android:layout_height="match_parent">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/launch_recycler"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/item_launch" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/launch_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_launch" />
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
     <include
         android:id="@+id/error"
-        layout="@layout/error_internet"/>
-
-<!--    <LinearLayout
-        android:id="@+id/error"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:paddingVertical="10dp"
-        android:background="@drawable/bg_error"
-        android:orientation="vertical"
-        >
-
-        <ImageView
-            android:paddingTop="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:src="@drawable/ic_wifi_off"
-            app:tint="@color/error" />
-
-        <TextView
-            android:paddingVertical="10dp"
-            android:paddingHorizontal="15dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="@string/load_error"
-            android:textColor="@color/error" />
-
-    </LinearLayout>-->
-
+        layout="@layout/error_internet" />
 
 </FrameLayout>
