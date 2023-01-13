@@ -11,6 +11,7 @@ import coil.load
 import com.example.spasex.R
 import com.example.spasex.core.BaseFragment
 import com.example.spasex.core.appComponent
+import com.example.spasex.core.loadingImage
 import com.example.spasex.core.setDateFormat
 import com.example.spasex.core.state.LoadState
 import com.example.spasex.databinding.FragmentDetailsBinding
@@ -41,7 +42,7 @@ class DetailsFragment : BaseFragment<FragmentDetailsBinding>() {
                 binding.status.isSelected = item.success
                 if (item.success) binding.status.setText(R.string.success)
                 else binding.status.setText(R.string.fail)
-                binding.icon.load(item.icon)
+                binding.icon.loadingImage(item.icon)
                 binding.description.text = item.details
                 binding.crewRecycler.adapter = CrewAdapter(item.crewListItem)
             }

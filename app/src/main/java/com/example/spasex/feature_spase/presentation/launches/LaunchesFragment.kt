@@ -12,7 +12,7 @@ import com.example.spasex.core.BaseFragment
 import com.example.spasex.core.appComponent
 import com.example.spasex.databinding.FragmentLaunchesBinding
 import com.example.spasex.feature_spase.presentation.launches.adapter.LaunchesAdapter
-import com.example.spasex.feature_spase.presentation.launches.adapter.holder.LoadAdapter
+import com.example.spasex.feature_spase.presentation.launches.adapter.LoadAdapter
 import kotlinx.coroutines.launch
 
 class LaunchesFragment : BaseFragment<FragmentLaunchesBinding>() {

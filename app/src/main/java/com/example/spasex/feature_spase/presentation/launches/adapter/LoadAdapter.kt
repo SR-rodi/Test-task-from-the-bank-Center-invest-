@@ -1,10 +1,11 @@
-package com.example.spasex.feature_spase.presentation.launches.adapter.holder
+package com.example.spasex.feature_spase.presentation.launches.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.paging.LoadState
 import androidx.paging.LoadStateAdapter
 import com.example.spasex.databinding.ItemFooterProgressbarBinding
+import com.example.spasex.feature_spase.presentation.launches.adapter.holder.LoadStateViewHolder
 
 class LoadAdapter : LoadStateAdapter<LoadStateViewHolder>() {
     override fun onBindViewHolder(holder: LoadStateViewHolder, loadState: LoadState) {}
