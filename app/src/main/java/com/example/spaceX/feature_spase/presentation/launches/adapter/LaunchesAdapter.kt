@@ -6,6 +6,7 @@ import androidx.paging.PagingDataAdapter
 import com.example.spaceX.feature_spase.domain.model.Launch
 import com.example.spaceX.feature_spase.presentation.launches.adapter.holder.LaunchViewHolder
 import com.example.spaceX.databinding.ItemLaunchBinding
+import com.example.spaceX.feature_spase.domain.model.DetailsLaunch
 
 class LaunchesAdapter(
     private val onClickItem: (id: String) -> Unit

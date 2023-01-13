@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <style name="Theme.SplashScreen.App" parent="Theme.SplashScreen.IconBackground">
+        <item name="windowSplashScreenBackground">#5574A1</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item>
+        <item name="postSplashScreenTheme">@style/Theme.SpaseX</item>
+        
+    </style>
+    
+</resources>
