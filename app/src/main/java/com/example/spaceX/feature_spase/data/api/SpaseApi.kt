@@ -1,7 +1,7 @@
 package com.example.spaceX.feature_spase.data.api
 
 import com.example.spaceX.feature_spase.data.dto.crew.CrewDto
-import com.example.spaceX.feature_spase.domain.query.parent.QueryAndOptions
+import com.example.spaceX.feature_spase.data.query.parent.QueryAndOptions
 import com.example.spaceX.feature_spase.data.dto.launches.LaunchesDto
 import com.example.spaceX.feature_spase.data.dto.launches.ResponseLaunch
 import retrofit2.http.Body

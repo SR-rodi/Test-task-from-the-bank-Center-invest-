@@ -36,15 +36,18 @@ class DetailsFragment : BaseFragment<FragmentDetailsBinding>() {
     private fun dataObserve() {
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.data.collect { item ->
-                binding.date.setDateFormat(item.date * 1000)
-                binding.name.text = item.name
-                binding.counter.text = item.cores.first().toString()
-                binding.status.isSelected = item.success
-                if (item.success) binding.status.setText(R.string.success)
-                else binding.status.setText(R.string.fail)
-                binding.icon.loadingImage(item.icon)
-                binding.description.text = item.details
-                binding.crewRecycler.adapter = CrewAdapter(item.crewListItem)
+                binding.apply {
+                    date.setDateFormat(item.date * 1000)
+                    name.text = item.name
+                    counter.text = item.cores.first().toString()
+                    status.isSelected = item.success
+                    if (item.success) status.setText(R.string.success)
+                    else status.setText(R.string.fail)
+                    icon.loadingImage(item.icon)
+                    description.text = item.details
+                    crewRecycler.adapter = CrewAdapter(item.crewListItem)
+                }
+
             }
         }
     }
@@ -52,10 +55,13 @@ class DetailsFragment : BaseFragment<FragmentDetailsBinding>() {
     private fun loadStateObserve() {
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.loadState.collect { loadState ->
-                binding.progressBar.isVisible = loadState == LoadState.LOADING
-                binding.crewRecycler.isVisible = loadState == LoadState.SUCCESS_NOT_EMPTY_CREW
-                binding.error.notInternet.isVisible = loadState == LoadState.ERROR
-                binding.notCrew.isVisible = loadState == LoadState.SUCCESS_EMPTY_CREW
+                binding.apply {
+                    progressBar.isVisible = loadState == LoadState.LOADING
+                    crewRecycler.isVisible = loadState == LoadState.SUCCESS_NOT_EMPTY_CREW
+                    error.notInternet.isVisible = loadState == LoadState.ERROR
+                    notCrew.isVisible = loadState == LoadState.SUCCESS_EMPTY_CREW
+                }
+
             }
         }
     }

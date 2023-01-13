@@ -36,7 +36,7 @@ class DetailsViewModel @Inject constructor(
 
             val item = detailUseCase.getLaunchById(id)
 
-            _data.emit(detailUseCase.getLaunchById(id))
+            _data.emit(item)
 
             _loadState.value = if (item.crewListItem.isEmpty()) LoadState.SUCCESS_EMPTY_CREW
             else LoadState.SUCCESS_NOT_EMPTY_CREW

@@ -2,11 +2,11 @@ package com.example.spaceX.feature_spase.data.repository_impl
 
 import com.example.spaceX.feature_spase.data.api.SpaseApi
 import com.example.spaceX.feature_spase.domain.model.ListLaunches
-import com.example.spaceX.feature_spase.domain.query.childe.options.Options
-import com.example.spaceX.feature_spase.domain.query.childe.options.Sort
-import com.example.spaceX.feature_spase.domain.query.childe.query.DateUtc
-import com.example.spaceX.feature_spase.domain.query.childe.query.Query
-import com.example.spaceX.feature_spase.domain.query.parent.QueryAndOptions
+import com.example.spaceX.feature_spase.data.query.childe.options.Options
+import com.example.spaceX.feature_spase.data.query.childe.options.Sort
+import com.example.spaceX.feature_spase.data.query.childe.query.DateUtc
+import com.example.spaceX.feature_spase.data.query.childe.query.Query
+import com.example.spaceX.feature_spase.data.query.parent.QueryAndOptions
 import com.example.spaceX.feature_spase.domain.repository.SpaseRepository
 import javax.inject.Inject
 
