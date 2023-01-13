@@ -10,6 +10,6 @@ class LaunchesViewModel @Inject constructor(
     repository: SpasePagingLaunchesRepository
 ) : ViewModel() {
 
-    var data = repository.loading().cachedIn(viewModelScope)
+    val data = repository.loading().cachedIn(viewModelScope)
 
 }
