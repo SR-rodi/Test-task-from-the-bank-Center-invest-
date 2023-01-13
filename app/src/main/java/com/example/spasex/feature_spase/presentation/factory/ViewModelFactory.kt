@@ -9,7 +9,7 @@ import com.example.spasex.feature_spase.presentation.launches.LaunchesViewModel
 import javax.inject.Inject
 
 @Suppress("UNCHECKED_CAST", "KotlinConstantConditions")
-class ViewModelFactory @Inject constructor (
+class ViewModelFactory @Inject constructor(
     private val repository: SpasePagingLaunchesRepositoryImpl,
     private val crewUseCase: DetailsLaunchUseCase
 ) : ViewModelProvider.Factory {

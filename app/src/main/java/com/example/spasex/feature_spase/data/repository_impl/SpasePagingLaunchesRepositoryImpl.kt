@@ -2,9 +2,7 @@ package com.example.spasex.feature_spase.data.repository_impl
 
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
-import androidx.paging.PagingSource
 import com.example.spasex.core.pagin_sourc.LaunchesPagingSource
-import com.example.spasex.feature_spase.domain.model.Launch
 import com.example.spasex.feature_spase.domain.repository.SpasePagingLaunchesRepository
 import com.example.spasex.feature_spase.domain.usecase.LaunchUseCase
 import javax.inject.Inject
@@ -18,7 +16,6 @@ class SpasePagingLaunchesRepositoryImpl @Inject constructor(
             pageSize = 10,
             enablePlaceholders = false
         ),
-        pagingSourceFactory = { LaunchesPagingSource(launchUseCase)}
+        pagingSourceFactory = { LaunchesPagingSource(launchUseCase) }
     ).flow
 }
-

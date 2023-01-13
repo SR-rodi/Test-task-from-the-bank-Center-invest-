@@ -6,10 +6,10 @@ import androidx.paging.LoadState
 import androidx.paging.LoadStateAdapter
 import com.example.spasex.databinding.ItemFooterProgressbarBinding
 
-class LoadAdapter:LoadStateAdapter<LoadStateViewHolder>() {
+class LoadAdapter : LoadStateAdapter<LoadStateViewHolder>() {
     override fun onBindViewHolder(holder: LoadStateViewHolder, loadState: LoadState) {}
 
     override fun onCreateViewHolder(parent: ViewGroup, loadState: LoadState) = LoadStateViewHolder(
-        ItemFooterProgressbarBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+        ItemFooterProgressbarBinding.inflate(LayoutInflater.from(parent.context), parent, false)
     )
 }

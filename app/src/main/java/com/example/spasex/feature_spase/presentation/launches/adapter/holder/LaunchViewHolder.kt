@@ -18,7 +18,7 @@ class LaunchViewHolder(private val binding: ItemLaunchBinding) :
         binding.name.text = item.name
         binding.counter.text = item.cores.first().toString()
         binding.status.isSelected = item.success
-        binding.date.setDateFormat(item.date*1000)
+        binding.date.setDateFormat(item.date * 1000)
         if (item.success) binding.status.setText(R.string.success)
         else binding.status.setText(R.string.fail)
         binding.icon.load(item.icon)

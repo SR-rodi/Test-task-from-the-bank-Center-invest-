@@ -13,12 +13,12 @@ class LaunchesDto(
     private val success: Boolean,
     private val crew: List<String>,
     private val details: String?,
-    private val date_utc:String
+    private val date_utc: String
 ) {
     private fun toListFlight() = this.cores.map { coreDto -> coreDto.flight }
 
-    fun toLaunch() = Launch(id, date, toListFlight(), links.patch.small, name, success,date_utc)
+    fun toLaunch() = Launch(id, date, toListFlight(), links.patch.small, name, success, date_utc)
 
     fun toDetailsLaunch() =
-        DetailsLaunch(id,date,toListFlight(),links.patch.large,name,success, crew, details)
+        DetailsLaunch(id, date, toListFlight(), links.patch.large, name, success, crew, details)
 }

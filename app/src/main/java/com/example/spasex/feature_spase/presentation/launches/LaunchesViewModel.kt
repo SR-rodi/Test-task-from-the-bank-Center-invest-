@@ -12,5 +12,4 @@ class LaunchesViewModel @Inject constructor(
 
     var data = repository.loading().cachedIn(viewModelScope)
 
-
 }

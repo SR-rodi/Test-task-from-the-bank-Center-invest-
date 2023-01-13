@@ -4,5 +4,5 @@ import com.example.spasex.feature_spase.domain.model.ListLaunches
 
 interface LaunchUseCase {
 
-   suspend fun getLaunches(page:Int):ListLaunches
+    suspend fun getLaunches(page: Int): ListLaunches
 }

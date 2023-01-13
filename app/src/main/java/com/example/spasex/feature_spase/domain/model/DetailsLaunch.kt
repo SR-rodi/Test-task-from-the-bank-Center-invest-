@@ -9,5 +9,5 @@ class DetailsLaunch(
     val success: Boolean,
     val crewListId: List<String>,
     val details: String?,
-    val crewListItem:MutableList<Crew> = mutableListOf()
+    val crewListItem: MutableList<Crew> = mutableListOf()
 )

@@ -13,8 +13,7 @@ import javax.inject.Inject
 class SpaseRepositoryImpl @Inject constructor(private val api: SpaseApi) : SpaseRepository {
 
     private fun createQueryAndOptions(page: Int) =
-        QueryAndOptions(Query(DateUtc()), Options(page, Sort("asc")))
-
+        QueryAndOptions(Query(DateUtc()), Options(page, Sort(ASCENDING)))
 
     override suspend fun getLaunches(page: Int): ListLaunches =
         api.getLaunches(createQueryAndOptions(page)).toListLaunches()
@@ -23,4 +22,8 @@ class SpaseRepositoryImpl @Inject constructor(private val api: SpaseApi) : Spase
         api.getOneLaunches(launchId).toDetailsLaunch()
 
     override suspend fun getCrewById(crewId: String) = api.getCrewById(crewId).toCrew()
+
+    companion object {
+        private const val ASCENDING = "asc"
+    }
 }

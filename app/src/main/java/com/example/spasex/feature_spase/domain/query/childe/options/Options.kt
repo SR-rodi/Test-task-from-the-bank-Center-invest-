@@ -4,4 +4,3 @@ class Options(
     val page: Int,
     val sort: Sort = Sort()
 )
-

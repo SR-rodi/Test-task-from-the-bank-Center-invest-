@@ -1,7 +1,6 @@
 package com.example.spasex.feature_spase.presentation.details
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import androidx.core.view.isVisible
@@ -15,10 +14,8 @@ import com.example.spasex.core.appComponent
 import com.example.spasex.core.setDateFormat
 import com.example.spasex.core.state.LoadState
 import com.example.spasex.databinding.FragmentDetailsBinding
-import com.example.spasex.feature_spase.domain.model.Crew
 import com.example.spasex.feature_spase.presentation.details.adapter.CrewAdapter
 import kotlinx.coroutines.launch
-import java.util.Calendar
 
 class DetailsFragment : BaseFragment<FragmentDetailsBinding>() {
 

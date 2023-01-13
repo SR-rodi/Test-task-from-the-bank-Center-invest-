@@ -10,6 +10,7 @@ import com.example.spasex.feature_spase.presentation.launches.adapter.holder.Lau
 class LaunchesAdapter(
     private val onClickItem: (id: String) -> Unit
 ) : PagingDataAdapter<Launch, LaunchViewHolder>(LauncherDiffUtil()) {
+
     override fun onBindViewHolder(holder: LaunchViewHolder, position: Int) {
         getItem(position)?.let { item ->
             holder.bind(item) { id -> onClickItem(id) }
