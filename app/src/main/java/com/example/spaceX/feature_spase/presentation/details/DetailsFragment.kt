@@ -7,7 +7,7 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.navArgs
-import com.example.spaceX.core.BaseFragment
+import com.example.spaceX.core.basefragment.BaseFragment
 import com.example.spaceX.core.appComponent
 import com.example.spaceX.core.loadingImage
 import com.example.spaceX.core.setDateFormat

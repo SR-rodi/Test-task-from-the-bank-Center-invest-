@@ -8,7 +8,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.paging.LoadState
-import com.example.spaceX.core.BaseFragment
+import com.example.spaceX.core.basefragment.BaseFragment
 import com.example.spaceX.core.appComponent
 import com.example.spaceX.feature_spase.presentation.launches.adapter.LaunchesAdapter
 import com.example.spaceX.feature_spase.presentation.launches.adapter.LoadAdapter

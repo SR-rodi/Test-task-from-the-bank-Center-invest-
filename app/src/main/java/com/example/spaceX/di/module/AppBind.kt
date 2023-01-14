@@ -1,5 +1,7 @@
 package com.example.spaceX.di.module
 
+import com.example.spaceX.core.CoroutinesDispatchersWrapper
+import com.example.spaceX.core.DispatchersWrapper
 import com.example.spaceX.feature_spase.data.repository_impl.SpasePagingLaunchesRepositoryImpl
 import com.example.spaceX.feature_spase.data.repository_impl.SpaseRepositoryImpl
 import com.example.spaceX.feature_spase.data.usecase_impl.DetailsLaunchUseCaseImpl
@@ -26,4 +28,7 @@ interface AppBind {
     fun bindSpasePagingLaunchesRepository(
         repository: SpasePagingLaunchesRepositoryImpl
     ): SpasePagingLaunchesRepository
+
+    @Binds
+    fun bindDispatchersWrapper(repository: CoroutinesDispatchersWrapper): DispatchersWrapper
 }

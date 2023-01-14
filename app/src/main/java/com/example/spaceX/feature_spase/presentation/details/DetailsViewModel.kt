@@ -3,11 +3,11 @@ package com.example.spaceX.feature_spase.presentation.details
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.spaceX.core.DispatchersWrapper
 import com.example.spaceX.core.state.LoadState
 import com.example.spaceX.feature_spase.domain.model.DetailsLaunch
 import com.example.spaceX.feature_spase.domain.usecase.DetailsLaunchUseCase
 import kotlinx.coroutines.CoroutineExceptionHandler
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asSharedFlow
@@ -16,7 +16,8 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 class DetailsViewModel @Inject constructor(
-    private val detailUseCase: DetailsLaunchUseCase
+    private val detailUseCase: DetailsLaunchUseCase,
+    private val dispatchers: DispatchersWrapper,
 ) : ViewModel() {
 
     private val _data = MutableSharedFlow<DetailsLaunch>()
@@ -31,7 +32,7 @@ class DetailsViewModel @Inject constructor(
     }
 
     fun getData(id: String) {
-        viewModelScope.launch(Dispatchers.IO + handler) {
+        viewModelScope.launch(dispatchers.io + handler) {
             _loadState.value = LoadState.LOADING
 
             val item = detailUseCase.getLaunchById(id)

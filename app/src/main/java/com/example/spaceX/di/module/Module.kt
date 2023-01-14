@@ -1,5 +1,6 @@
 package com.example.spaceX.di.module
 
+import com.example.spaceX.core.CoroutinesDispatchersWrapper
 import com.example.spaceX.feature_spase.data.api.SpaseApi
 import dagger.Module
 import dagger.Provides
@@ -17,6 +18,9 @@ class Module {
 
     @Provides
     fun provideSpaseApi(retrofit: Retrofit) = retrofit.create<SpaseApi>()
+
+    @Provides
+    fun providerDispatchers() = CoroutinesDispatchersWrapper()
 
     companion object {
         private const val BASE_URL = "https://api.spacexdata.com/v4/"

@@ -1,4 +1,4 @@
-package com.example.spaceX.core
+package com.example.spaceX.core.basefragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
