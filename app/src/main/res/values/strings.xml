@@ -6,7 +6,7 @@
     <string name="success">Успешно</string>
     <string name="fail">Провал</string>
     <string name="status">Статус миссии:</string>
-    <string name="load_error">Проверьте состояние сети\nи перзагрузите страницу свайпом внмз</string>
+    <string name="load_error">Проверьте состояние сети\nи перзагрузите страницу свайпом вниз</string>
     <string name="not_info">Нет иформации по экипажу</string>
     <string name="crew">Экипаж:</string>
     <string name="description">Описание:</string>
