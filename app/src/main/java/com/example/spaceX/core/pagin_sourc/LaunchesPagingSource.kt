@@ -39,7 +39,6 @@ class LaunchesPagingSource(
         return QueryAndOptions(Query(DateUtc(dataUtc)), Options(page, Sort(ASCENDING)))
     }
 
-
     companion object {
         private const val FIRST_PAGE = 1
         private const val ASCENDING = "asc"

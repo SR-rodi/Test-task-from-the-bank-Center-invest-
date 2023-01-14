@@ -1,4 +1,5 @@
 package com.example.spaceX.feature_spase.data.query.childe.options
+
 import com.google.gson.annotations.SerializedName
 import kotlinx.serialization.Serializable
 
@@ -7,5 +8,7 @@ class Options(
     @SerializedName("page")
     var page: Int,
     @SerializedName("sort")
-    val sort: Sort = Sort()
+    val sort: Sort = Sort(),
+    @SerializedName("select")
+    val select: Select = Select()
 )

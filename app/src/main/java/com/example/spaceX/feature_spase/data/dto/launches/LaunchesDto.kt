@@ -5,15 +5,15 @@ import com.example.spaceX.feature_spase.domain.model.Launch
 import com.google.gson.annotations.SerializedName
 
 class LaunchesDto(
-    @SerializedName("date_unix") val date: Long,
-    private val id: String,
+        @SerializedName("date_unix") val date: Long,
+        private val id: String,
     private val cores: List<CoreDto>,
-    private val links: LinksDto,
-    private val name: String,
-    private val success: Boolean,
-    private val crew: List<String>,
-    private val details: String?,
-    private val date_utc: String
+        private val links: LinksDto,
+        private val name: String,
+        private val success: Boolean,
+        private val crew: List<String>,
+         private val details: String?,
+        private val date_utc: String
 ) {
     private fun toListFlight() = this.cores.map { coreDto -> coreDto.flight }
 
@@ -22,3 +22,18 @@ class LaunchesDto(
     fun toDetailsLaunch() =
         DetailsLaunch(id, date, toListFlight(), links.patch.large, name, success, crew, details)
 }
+
+/*
+* {
+  "options": {
+        "select": {
+          "name": 1,
+          "success":1,
+          "details":1,
+          "date_unix":1,
+          "date_utc":1,
+          "crew":1
+        }
+      }
+}
+* */
