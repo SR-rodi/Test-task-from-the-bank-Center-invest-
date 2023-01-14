@@ -11,11 +11,11 @@ class SpasePagingLaunchesRepositoryImpl @Inject constructor(
     private val launchUseCase: LaunchUseCase
 ) : SpasePagingLaunchesRepository {
 
-    override fun loading() = Pager(
+    override fun loading(year:Int) = Pager(
         config = PagingConfig(
             pageSize = 10,
             enablePlaceholders = false
         ),
-        pagingSourceFactory = { LaunchesPagingSource(launchUseCase) }
+        pagingSourceFactory = { LaunchesPagingSource(launchUseCase,year) }
     ).flow
 }

@@ -6,5 +6,5 @@ import kotlinx.coroutines.flow.Flow
 
 interface SpasePagingLaunchesRepository {
 
-    fun loading(): Flow<PagingData<Launch>>
+    fun loading(year:Int): Flow<PagingData<Launch>>
 }

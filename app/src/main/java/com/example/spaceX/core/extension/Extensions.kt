@@ -1,4 +1,4 @@
-package com.example.spaceX.core
+package com.example.spaceX.core.extension
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -21,7 +21,7 @@ fun TextView.setDateFormat(date: Long) {
     this.text = SimpleDateFormat("HH:mm dd-MM-yyyy").format(date)
 }
 
-fun ImageView.loadingImage(url:Any){
+fun ImageView.loadingImage(url:Any?){
     this.load(url){
         crossfade(true)
         placeholder(R.drawable.ic_placeholder)

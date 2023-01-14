@@ -8,9 +8,9 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.navArgs
 import com.example.spaceX.core.basefragment.BaseFragment
-import com.example.spaceX.core.appComponent
-import com.example.spaceX.core.loadingImage
-import com.example.spaceX.core.setDateFormat
+import com.example.spaceX.core.extension.appComponent
+import com.example.spaceX.core.extension.loadingImage
+import com.example.spaceX.core.extension.setDateFormat
 import com.example.spaceX.core.state.LoadState
 import com.example.spaceX.feature_spase.presentation.details.adapter.CrewAdapter
 import com.example.spaceX.R

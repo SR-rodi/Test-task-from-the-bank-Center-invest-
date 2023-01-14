@@ -10,6 +10,10 @@ class LaunchesViewModel @Inject constructor(
     repository: SpasePagingLaunchesRepository
 ) : ViewModel() {
 
-    val data = repository.loading().cachedIn(viewModelScope)
+    val data = repository.loading(START_YEAR).cachedIn(viewModelScope)
 
+
+    companion object {
+        const val START_YEAR = 2021
+    }
 }

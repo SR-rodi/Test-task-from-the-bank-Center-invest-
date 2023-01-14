@@ -1,8 +1,8 @@
 package com.example.spaceX.feature_spase.presentation.launches.adapter.holder
 
 import androidx.recyclerview.widget.RecyclerView
-import com.example.spaceX.core.loadingImage
-import com.example.spaceX.core.setDateFormat
+import com.example.spaceX.core.extension.loadingImage
+import com.example.spaceX.core.extension.setDateFormat
 import com.example.spaceX.feature_spase.domain.model.Launch
 import com.example.spaceX.R
 import com.example.spaceX.databinding.ItemLaunchBinding

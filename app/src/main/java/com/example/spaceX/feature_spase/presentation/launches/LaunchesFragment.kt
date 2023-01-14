@@ -9,7 +9,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.paging.LoadState
 import com.example.spaceX.core.basefragment.BaseFragment
-import com.example.spaceX.core.appComponent
+import com.example.spaceX.core.extension.appComponent
 import com.example.spaceX.feature_spase.presentation.launches.adapter.LaunchesAdapter
 import com.example.spaceX.feature_spase.presentation.launches.adapter.LoadAdapter
 import com.example.spaceX.databinding.FragmentLaunchesBinding
@@ -61,5 +61,4 @@ class LaunchesFragment : BaseFragment<FragmentLaunchesBinding>() {
             LaunchesFragmentDirections.actionLaunchesFragmentToDetailsFragment(id)
         )
     }
-
 }
